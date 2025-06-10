@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['accident', 'bicycle', 'bus', 'car', 'motorcycle', 'person', 'truck']
+
+roboflow:
+  workspace: convertyolo2voc
+  project: convert_yolo_2_voc
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/convertyolo2voc/convert_yolo_2_voc/dataset/1
