@@ -6,12 +6,12 @@ Mô hình nhận diện tai nạn giao thông tại Việt Nam
 
 ## 🖥️ System Information
 
-**Operating System**: Windows 11 (Build 22631)  
+**Operating System**: Windows 11 (Build 22631)
 **CPU**: 12th Gen Intel(R) Core(TM) i7-12700H  
 **CPU Cores**: 14  
 **CPU Threads**: 20  
 **Max CPU Frequency**: 2700.00 MHz  
-**RAM**: 15.71 GB  
+**RAM**: 16 GB
 
 ---
 
