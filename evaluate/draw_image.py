@@ -19,11 +19,8 @@ df_map_best = df_map[df_map["Weight"] == "best.pt"].copy()
 # Gộp dữ liệu theo Version
 df_merged = pd.merge(df_map_best, df_latency, on="Version")
 
-# Sắp xếp theo version cho đẹp
-df_merged = df_merged.sort_values(by="Version", ascending=True)
-
 # Setup style
-sns.set(style='whitegrid')
+sns.set_theme(style='whitegrid')
 plt.figure(figsize=(14, 10))
 
 # Biểu đồ mAP50

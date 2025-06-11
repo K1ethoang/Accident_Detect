@@ -92,7 +92,7 @@ def main():
         fps, latency = process_video_yolo(model, VIDEO_PATH)
         if fps is not None:
             results.append({
-                'Model': subdir,
+                'Version': subdir,
                 'FPS': fps,
                 'Latency (s)': latency
             })
