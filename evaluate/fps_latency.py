@@ -99,7 +99,7 @@ def main():
 
     # Ghi kết quả ra file CSV
     with open(OUTPUT_CSV, 'w', newline='') as csvfile:
-        fieldnames = ['Model', 'FPS', 'Latency (s)']
+        fieldnames = ['Version', 'FPS', 'Latency (s)']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for result in results:
@@ -108,7 +108,7 @@ def main():
     print(f"\nResults saved to {OUTPUT_CSV}")
     print("=" * 50)
     for result in results:
-        print(f"Model: {result['Model']}")
+        print(f"Model: {result['Version']}")
         print(f"FPS: {result['FPS']:.2f}")
         print(f"Latency: {result['Latency (s)']:.4f} s")
         print("-" * 50)

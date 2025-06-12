@@ -5,7 +5,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'Use {device}')
 
 if __name__ == '__main__':
-    model = YOLO('./yolo11l.pt')
+    model = YOLO('./yolo11x.pt')
     
     results = model.train(
         data='dataset/data.yaml',
@@ -15,6 +15,6 @@ if __name__ == '__main__':
         workers=2,
         save_period=2,
         project='runs/train',
-        name='v11-l',
+        name='v11-x',
         # resume=True
     )
