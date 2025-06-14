@@ -196,5 +196,4 @@ cython_debug/
 
 *.cache
 runs/detect/
-.gradio
 detect/extract/
