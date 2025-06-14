@@ -137,7 +137,7 @@ def main():
     model_root_dir = "./runs/train/"
     test_data_path = "./dataset/data_evaluate.yaml"
     
-    output_csv = "yolo_v11_all_versions.csv"
+    output_csv = "./evaluate/mAP50_IoU.csv"
     results = []
 
     # Duyệt qua tất cả thư mục con trong model_root_dir
@@ -148,8 +148,8 @@ def main():
         if not os.path.isdir(weights_dir):
             continue
 
-        # Duyệt qua last.pt và best.pt nếu tồn tại
-        for weight_file in ["last.pt", "best.pt"]:
+        # Duyệt qua best.pt nếu tồn tại
+        for weight_file in ["best.pt"]:
             model_path = os.path.join(weights_dir, weight_file)
             if os.path.isfile(model_path):
                 print(f"Evaluating model: {model_path}")
@@ -163,7 +163,10 @@ def main():
                     "Average_IoU": eval_result["Average_IoU"]
                 })
 
-    # Ghi ra CSV
+    # Ghi ra CSV theo đúng thứ tự n -> s -> m -> l -> x
+    version_order = {"v11-n": 0, "v11-s": 1, "v11-m": 2, "v11-l": 3, "v11-x": 4}
+    results.sort(key=lambda x: version_order.get(x["Version"], 999))
+
     with open(output_csv, 'w', newline='') as csvfile:
         fieldnames = ["Model", "Version", "Weight", "mAP50", "Average_IoU"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

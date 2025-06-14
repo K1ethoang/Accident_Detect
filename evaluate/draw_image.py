@@ -63,7 +63,7 @@ plt.title('FPS (1000 frames) Comparison')
 for container in ax3.containers:
     ax3.bar_label(container, fmt='%.2f')
 
-# Biểu đồ Latency (càng cao càng nhạt)
+# Biểu đồ Latency
 plt.subplot(2, 2, 4)
 colors_latency = get_gradient_palette(df_merged["Latency (s)"], "Reds")
 ax4 = sns.barplot(x='Latency (s)', y='Version', data=df_merged, palette=colors_latency)
@@ -71,7 +71,7 @@ plt.title('Latency (s) Comparison')
 for container in ax4.containers:
     ax4.bar_label(container, fmt='%.4f')
 
-plt.suptitle("YOLOv11 Performance Comparison", fontsize=16, fontweight='bold')
+plt.suptitle("YOLOv11 Performance Comparison time 3", fontsize=16, fontweight='bold')
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.savefig(output_image, dpi=300)
 plt.show()

@@ -97,7 +97,10 @@ def main():
                 'Latency (s)': latency
             })
 
-    # Ghi kết quả ra file CSV
+    # Sắp xếp kết quả theo thứ tự phiên bản
+    version_order = {"v11-n": 0, "v11-s": 1, "v11-m": 2, "v11-l": 3, "v11-x": 4}
+    results.sort(key=lambda x: version_order.get(x['Version'], 999))
+    
     with open(OUTPUT_CSV, 'w', newline='') as csvfile:
         fieldnames = ['Version', 'FPS', 'Latency (s)']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
